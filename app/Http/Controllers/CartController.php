@@ -116,6 +116,7 @@ class CartController extends Controller
                 session()->put('cart', $cart);
                 return redirect()->back()->with('massage','Cart Update Successfully ');
             }
+            
             $cart[$id]=[
                 'id'=>$products->id,
                 'name'=>$products->name,
@@ -143,7 +144,6 @@ class CartController extends Controller
         }
       }
         return redirect()->back();
-        
-        }
+        } 
 
 }

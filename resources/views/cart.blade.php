@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>CART</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{asset('js/custum.js')}}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
 </head>
 <body>
     <h1 class="text-center">CART</h1>
     <a href="/"><h3 class="text-center">BACK</h3></a>
 
 <div class="container">
-<table class="table">
+<table class="table" id="cart-item-section">
 
 <tr>
 <td>Name</td>
@@ -44,7 +48,7 @@
 <td><img src="{{ asset('/images/'.$details['image']) }}" alt="" title="" width="50px" height="50px"></td>
 <td>{{ $details['quantity'] * $details['price']}}</td>
 
-<td><a href="{{ route('delete-cart',$details['id']) }}" onclick="return confirm('Are you sure you want to delete this item')">Delete</a></td>
+<td><a href="#"  onclick="deleteCart('{{$details['id']}}','{{route('delete-cart',$details['id'])}}')">Delete</a></td>
 
 </tr>`
 @php

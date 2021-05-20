@@ -47,7 +47,7 @@ class OrderController extends Controller
             'u_name' => $request['u_name'],
             'email' => $request['email'],
             'phone' => $request['phone'],
-          
+          'total' => 200,
             'address' => $request['address'],
             'user_id' => $user_id,
         ]);
